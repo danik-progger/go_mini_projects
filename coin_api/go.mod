@@ -1,14 +1,11 @@
 module coin_api
 
-go 1.20
+go 1.22.2
 
 require (
-	github.com/go-chi/chi v1.5.4
-	github.com/gorilla/schema v1.2.0
+	github.com/go-chi/chi v1.5.5
+	github.com/gorilla/schema v1.4.1
 	github.com/sirupsen/logrus v1.9.3
 )
 
-require (
-	github.com/stretchr/testify v1.8.4 // indirect
-	golang.org/x/sys v0.15.0 // indirect
-)
+require golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
