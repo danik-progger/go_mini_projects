@@ -16,7 +16,7 @@ func main() {
 	r.HandleFunc("/movies", handlers.CreateMovie).Methods("POST")
 	r.HandleFunc("/movies/{id}", handlers.GetMovie).Methods("GET")
 	r.HandleFunc("/movies/{id}", handlers.UpdateMovie).Methods("PUT")
-	r.HandleFunc("/movies/{id}", handlers.DeleteMovie).Methods("Delete")
+	r.HandleFunc("/movies/{id}", handlers.DeleteMovie).Methods("DELETE")
 
 	fmt.Println("Starting GO Movies CRUD service...")
 
