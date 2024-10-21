@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -83,8 +84,5 @@ func main() {
 |__|__|  _|_|  |_|___|  |_| |___|_|_|_|_|_|_|_|_  |  |__,_|_|    |  _|___|_| |_|    |_| |___|___|___|___|
       |_|                                     |___|              |_|
 	`)
-	err := http.ListenAndServe(":8080", r)
-	if err != nil {
-		fmt.Println("Error starting server:", err)
-	}
+	log.Fatal(http.ListenAndServe(":8080", r))
 }

@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 )
 
@@ -21,10 +20,6 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func pingHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/ping" {
-		http.Error(w, "404 not found", http.StatusNotFound)
-		return
-	}
 	if r.Method != "GET" {
 		http.Error(w, "Only GET method supported", http.StatusNotFound)
 		return
@@ -39,8 +34,5 @@ func main() {
 	http.HandleFunc("/ping", pingHandler)
 
 	fmt.Printf("Starting server at port 8080\n")
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
+	http.ListenAndServe(":8080", nil)
 }
